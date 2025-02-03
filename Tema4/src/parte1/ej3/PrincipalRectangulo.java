@@ -1,7 +1,5 @@
 package parte1.ej3;
 
-import parte1.ej2.Persona;
-
 public class PrincipalRectangulo {
 	public static void main(String[] args) {
 		/*
