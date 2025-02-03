@@ -1,0 +1,65 @@
+package parte1.ej2;
+
+import java.util.Scanner;
+
+public class PrincipalPersona {
+	/*
+	 * En el main de la clase principal instancia dos objetos de la clase Persona.
+	 * Luego, pide por teclado los datos de ambas personas (guárdalos en los
+	 * objetos). Por último, imprime dos mensajes por pantalla (uno por objeto) con
+	 * un mensaje del estilo “Azucena Luján García con DNI … es / no es mayor de
+	 * edad”.
+	 */
+
+	public static void main(String[] args) {
+		// crear scanner
+		Scanner sc = new Scanner(System.in);
+
+		// instanciamos dos objetos de clase Persona (1 por persona)
+		Persona p1 = new Persona();
+		Persona p2 = new Persona();
+
+		System.out.println("PERSONA 1");
+		// pedir datos a persona 1
+		System.out.println("Introduzca su DNI: ");
+		p1.dni = sc.nextLine();
+		
+		System.out.println("\nIntroduzca su nombre: ");
+		p1.nombre = sc.nextLine();
+		
+		System.out.println("\nIntroduzca sus apellidos: ");
+		p1.apellidos = sc.nextLine();
+		
+		System.out.println("\nIntroduzca su edad: ");
+		p1.edad = sc.nextInt();
+		// limpiar buffer
+		sc.nextLine();
+		
+		System.out.println("\nPERSONA 2");
+		
+		// pedir datos a persona 2
+		System.out.println("Introduzca su DNI: ");
+		p2.dni = sc.nextLine();
+		
+		System.out.println("\nIntroduzca su nombre: ");
+		p2.nombre = sc.nextLine();
+		
+		System.out.println("\nIntroduzca sus apellidos: ");
+		p2.apellidos = sc.nextLine();
+		
+		System.out.println("\nIntroduzca su edad: ");
+		p2.edad = sc.nextInt();
+		// limpiar buffer
+		sc.nextLine();
+		
+		// mostrar mensaje por pantalla 'p1'
+		System.out.println("\n" + p1.nombre + " " + p1.apellidos + " con DNI " + p1.dni + (p1.edad >= 18 ? " es mayor de edad." : " no es mayor de edad."));
+		
+		// mostrar mensaje por pantalla 'p2'
+		System.out.println("\n" + p2.nombre + " " + p2.apellidos + " con DNI " + p2.dni + (p2.edad >= 18 ? " es mayor de edad." : " no es mayor de edad."));
+		
+		// cerrar scanner
+		sc.close();
+	}
+
+}
