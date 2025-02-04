@@ -9,21 +9,8 @@ public class PrincipalRectangulo {
 	 */
 	
 	public static void main(String[] args) {
-		// instanciar 2 rectángulos
-		Rectangulo rect1 = new Rectangulo();
-		Rectangulo rect2 = new Rectangulo();
-
-		// asignar coordenadas del primer rectángulo
-		rect1.x1 = 0;
-		rect1.y1 = 0;
-		rect1.x2 = 5;
-		rect1.y2 = 5;
-
-		// asignar coordenadas del segundo rectángulo
-		rect2.x1 = 7;
-		rect2.y1 = 9;
-		rect2.x2 = 2;
-		rect2.y2 = 3;
+		Rectangulo rect1 = new Rectangulo(0, 0, 5, 5);
+		Rectangulo rect2 = new Rectangulo(7, 9, 2, 3);
 
 		// imprimir resultado en pantalla (coordenadas)
 		System.out.println("Coordenadas 1er rectángulo:" + "(" + rect1.x1 + "," + rect1.y1 + ") y (" + rect1.x2 + ","
