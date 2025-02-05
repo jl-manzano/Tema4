@@ -51,7 +51,7 @@ public class PrincipalPersona {
 		p1 = new Persona(dni, nombre, apellidos, edad);
 		
 		// mostrar mensaje por pantalla 'p1'
-		System.out.println("\n" + p1.nombre + " " + p1.apellidos + " con DNI " + p1.dni + (p1.edad >= 18 ? " es mayor de edad." : " no es mayor de edad."));
+		System.out.println("\n" + p1.getNombre() + " " + p1.getApellidos() + " con DNI " + p1.getDni() + (p1.getEdad() >= 18 ? " es mayor de edad." : " no es mayor de edad."));
 		
 		
 		System.out.println("\nPERSONA 2");
@@ -75,7 +75,10 @@ public class PrincipalPersona {
 		p2 = new Persona(dni, nombre, apellidos, edad);
 		
 		// mostrar mensaje por pantalla 'p2'
-		System.out.println("\n" + p2.nombre + " " + p2.apellidos + " con DNI " + p2.dni + (p2.edad >= 18 ? " es mayor de edad." : " no es mayor de edad."));
+		System.out.println("\n" + p2.getNombre() + " " + p2.getApellidos() + " con DNI " + p2.getDni() + (p2.getEdad() >= 18 ? " es mayor de edad." : " no es mayor de edad."));
+		
+		// modificar atributos
+		// pers1
 		
 		// cerrar scanner
 		sc.close();

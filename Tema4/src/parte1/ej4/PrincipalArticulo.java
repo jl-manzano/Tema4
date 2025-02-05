@@ -12,22 +12,20 @@ public class PrincipalArticulo {
 	 */
 
 	public static void main(String[] args) {
-		// instanciar objeto de clase artículo
-		Articulo pijama = new Articulo();
-
-		// asigar valores a atributos
-		pijama.nombre = "pijama";
-		pijama.precio = 24.5;
-		pijama.cuantosQuedan = 50;
+		// instanciar objeto de clase artículo y asignar valores a atributos pasándolos
+		// como parámetros al constructor
+		Articulo pijama = new Articulo("pijama", 24.5, 0.21, 50);
 
 		// mostrar resultado con iva incluido
-		System.out.println("Pijama - Precio:" + pijama.precio + "€ - IVA:21% - " + "PVP:" + pijama.precio * 1.21 + "€");
-		
+		System.out.println("Pijama - Precio:" + pijama.precio + "€ - IVA: " + pijama.iva + "% - " + "PVP:"
+				+ (pijama.precio + (pijama.precio * pijama.iva)) + "€");
+
 		// cambiar precio
 		pijama.precio = 10;
-		
+
 		// volver a mostrar resultado con iva incluido (precio cambiado)
-		System.out.println("\nPijama - Precio:" + pijama.precio + "€ - IVA:21% - " + "PVP:" + pijama.precio * 1.21 + "€");
+		System.out.println("Pijama - Precio:" + pijama.precio + "€ - IVA: " + pijama.iva + "% - " + "PVP:"
+				+ (pijama.precio + (pijama.precio * pijama.iva)) + "€");
 	}
 
 }

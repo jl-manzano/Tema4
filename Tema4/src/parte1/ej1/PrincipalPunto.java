@@ -17,29 +17,28 @@ public class PrincipalPunto {
 
 		System.out.println("COORDENADAS POR PUNTO");
 		// mostrar coordenadas por punto
-		System.out.println("Punto 1: " + p1.x + "," + p1.y);
-		System.out.println("Punto 2: " + p2.x + "," + p2.y);
-		System.out.println("Punto 3: " + p3.x + "," + p3.y);
+		System.out.println("Punto 1: " + p1.getX() + "," + p1.getY());
+		System.out.println("Punto 2: " + p2.getX() + "," + p2.getY());
+		System.out.println("Punto 3: " + p3.getX() + "," + p3.getY());
 
 		// modificar coordenadas
 		// punto 1
-		p1.x -= 2;
-		p1.y += 10;
+		p1.setX(p1.getX() - 2);
+		p1.setY(p1.getY() + 10);
 
 		// punto 2
-		p2.x *= 2;
-		p2.y /= 2;
+		p2.setX(p2.getX() * 2);
+		p2.setY(p2.getY() / 10);
 
 		// punto 3
-		p3.x += 4;
-		p3.y -= 2;
+		p3.setX(p3.getX() + 4);
+		p3.setY(p3.getY() - 2);
 
 		System.out.println("\nCOORDENADAS MODIFICADAS POR PUNTO");
 
 		// mostrar coordenadas modificadas por punto
-		System.out.println("Punto 1: " + p1.x + "," + p1.y);
-		System.out.println("Punto 2: " + p2.x + "," + p2.y);
-		System.out.println("Punto 3: " + p3.x + "," + p3.y);
-
+		System.out.println("Punto 1: " + p1.getX() + "," + p1.getY());
+		System.out.println("Punto 2: " + p2.getX() + "," + p2.getY());
+		System.out.println("Punto 3: " + p3.getX() + "," + p3.getY());
 	}
 }

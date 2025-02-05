@@ -9,6 +9,7 @@ public class PrincipalRectangulo {
 	 */
 	
 	public static void main(String[] args) {
+		// instanciamos 2 objetos de la clase rectángulo y asignar coordenadas pasándolas como parámetros al constructor
 		Rectangulo rect1 = new Rectangulo(0, 0, 5, 5);
 		Rectangulo rect2 = new Rectangulo(7, 9, 2, 3);
 

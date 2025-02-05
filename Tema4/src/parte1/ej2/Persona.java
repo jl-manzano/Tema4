@@ -6,10 +6,16 @@ public class Persona {
 	 * principales de una persona: dni, nombre, apellidos y edad.
 	 */
 
-	int edad;
-	String dni;
-	String nombre;
-	String apellidos;
+	/*
+	 * Aplica el encapsulamiento básico a la clase Persona: Declara todos sus
+	 * atributos como private y crea todos los getters y setters necesarios (un get
+	 * y un set por atributo).
+	 */
+
+	private int edad;
+	private String dni;
+	private String nombre;
+	private String apellidos;
 
 	/*
 	 * Añadir a la clase Persona un constructor con todos los parámetros. Modificar
@@ -25,15 +31,52 @@ public class Persona {
 	 * @param edad      Edad de la persona
 	 */
 	public Persona(String dni, String nombre, String apellidos, int edad) {
-		if (dni != null && !dni.isEmpty()) { // comprobamos que los datos introducidos son correctos
+		// comprobar que datos introducidos son correctos
+		if (dni != null && !dni.isBlank()) {
 			this.dni = dni;
+		}
+
+		if (nombre != null && !nombre.isBlank()) {
 			this.nombre = nombre;
+		}
+
+		if (apellidos != null && !apellidos.isBlank()) {
 			this.apellidos = apellidos;
 		}
 
-		if (edad >= 0) { // comprobamos que los datos introducidos son correctos
+		if (edad >= 0) {
 			this.edad = edad;
 		}
+	}
+	
+	// Getters
+	public String getDni() {
+		return dni;
+	}
+	
+	public String getNombre() {
+		return nombre;
+	}
+	
+	public String getApellidos() {
+		return apellidos;
+	}
+	
+	public int getEdad() {
+		return edad;
+	}
+	
+	// Setters
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	
+	public void setApellidos(String apellidos) {
+		this.apellidos = apellidos;
+	}
+	
+	public void setEdad(int edad) {
+		this.edad = edad;
 	}
 
 }

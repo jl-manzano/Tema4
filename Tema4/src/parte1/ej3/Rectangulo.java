@@ -17,7 +17,7 @@ public class Rectangulo {
 	 * compruebe los valores. Si son válidos guardará los parámetros en el objeto.
 	 * En caso contrario, los atributos se quedarán con los valores por defecto.
 	 */
-	
+
 	/**
 	 * 
 	 * @param x1 Representa la coordenada X de la esquina inferior izquierda
@@ -26,10 +26,15 @@ public class Rectangulo {
 	 * @param y2 Representa la coordenada Y de la esquina superior derecha
 	 */
 	public Rectangulo(int x1, int y1, int x2, int y2) {
-		this.x1 = x1;
-		this.y1 = y1;
-		this.x2 = x2;
-		this.y2 = y2;
+		// condicional if - else -> comprobar que valores son válidos
+		if (x1 < x2 && y1 < y2) {
+			this.x1 = x1;
+			this.y1 = y1;
+			this.x2 = x2;
+			this.y2 = y2;
+		} else {
+			System.out.println("\nCoordenadas inválidas.");
+		}
 	}
 
 }

@@ -8,14 +8,19 @@ public class Punto {
 	 * (coordenadas).
 	 */
 
-	int x;
-	int y;
+	/*
+	 * Modifica los atributos de Punto para que sean private. Fíjate que desde el
+	 * main ya no te dejará utilizar ni modificar los atributos x e y de los
+	 * objetos.
+	 */
+	private int x;
+	private int y;
 
 	/*
 	 * Añadir a la clase Punto un constructor con parámetros que copie las
 	 * coordenadas pasadas como argumento a los atributos del objeto.
 	 */
-	
+
 	/**
 	 * 
 	 * @param x Representa la coordenada X
@@ -23,6 +28,24 @@ public class Punto {
 	 */
 	public Punto(int x, int y) {
 		this.x = x;
+		this.y = y;
+	}
+	
+	// Getters
+	public int getX() {
+		return x;
+	}
+	
+	public int getY() {
+		return y;
+	}
+	
+	// Setters
+	public void setX(int x) {
+		this.x = x;
+	}
+	
+	public void setY(int y) {
 		this.y = y;
 	}
 
