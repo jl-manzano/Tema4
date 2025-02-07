@@ -7,10 +7,10 @@ public class Rectangulo {
 	 * la clase deberá tener cuatro atributos enteros: x1, y1, x2, y2.
 	 */
 
-	int x1;
-	int y1;
-	int x2;
-	int y2;
+	private int x1;
+	private int y1;
+	private int x2;
+	private int y2;
 
 	/*
 	 * Añade a Rectangulo un constructor con los 4 parámetros. Incluye un if que
@@ -32,9 +32,71 @@ public class Rectangulo {
 			this.y1 = y1;
 			this.x2 = x2;
 			this.y2 = y2;
-		} else {
-			System.out.println("\nCoordenadas inválidas.");
 		}
+		
+	}
+	/**
+	 * Devuelve coordenada X1
+	 * @return
+	 */
+	public int getX1() {
+		return x1;
+	}
+
+	/**
+	 * Definir coordenada X1
+	 * @param x1
+	 */
+	public void setX1(int x1) {
+		this.x1 = x1;
+	}
+
+	/**
+	 * Devuelve coordenada Y1
+	 * @return
+	 */
+	public int getY1() {
+		return y1;
+	}
+
+	/**
+	 * Definir coordenada Y1
+	 * @param y1
+	 */
+	public void setY1(int y1) {
+		this.y1 = y1;
+	}
+
+	/**
+	 * Devuelve coordenada X2
+	 * @return
+	 */
+	public int getX2() {
+		return x2;
+	}
+
+	/**
+	 * Definir coordenada X2
+	 * @param x2
+	 */
+	public void setX2(int x2) {
+		this.x2 = x2;
+	}
+
+	/**
+	 * Devuelve coordenada Y2
+	 * @return
+	 */
+	public int getY2() {
+		return y2;
+	}
+
+	/**
+	 * Definir coordenada Y2
+	 * @param y2
+	 */
+	public void setY2(int y2) {
+		this.y2 = y2;
 	}
 
 }

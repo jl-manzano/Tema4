@@ -76,10 +76,6 @@ public class PrincipalPersona {
 		
 		// mostrar mensaje por pantalla 'p2'
 		System.out.println("\n" + p2.getNombre() + " " + p2.getApellidos() + " con DNI " + p2.getDni() + (p2.getEdad() >= 18 ? " es mayor de edad." : " no es mayor de edad."));
-		
-		// modificar atributos
-		// pers1
-		
 		// cerrar scanner
 		sc.close();
 	}

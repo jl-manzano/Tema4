@@ -6,10 +6,10 @@ public class Articulo {
 	 * cuantosQuedan
 	 */
 
-	String nombre;
-	double precio;
-	double iva;
-	int cuantosQuedan;
+	private String nombre;
+	private double precio;
+	private double iva;
+	private int cuantosQuedan;
 
 	/*
 	 * Añade un constructor con 4 parámetros que asigne valores a nombre, precio,
@@ -46,5 +46,71 @@ public class Articulo {
 		}
 
 	}
+
+	/**
+	 * Devuelve nombre de artículo
+	 * @return
+	 */
+	public String getNombre() {
+		return nombre;
+	}
+
+	/**
+	 * Definir nombre del artículo
+	 * @param nombre
+	 */
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	/**
+	 * Devuelve precio del artículo
+	 * @return
+	 */
+	public double getPrecio() {
+		return precio;
+	}
+
+	/**
+	 * Definir precio del artículo
+	 * @param precio
+	 */
+	public void setPrecio(double precio) {
+		this.precio = precio;
+	}
+
+	/**
+	 * Devuelve el IVA aplicado sobre el producto
+	 * @return
+	 */
+	public double getIva() {
+		return iva;
+	}
+
+	/**
+	 * Definir IVA aplicado sobre el producto
+	 * @param iva
+	 */
+	public void setIva(double iva) {
+		this.iva = iva;
+	}
+
+	/**
+	 * Devuelve el stock del producto
+	 * @return
+	 */
+	public int getCuantosQuedan() {
+		return cuantosQuedan;
+	}
+
+	/**
+	 * Definir stock del producto
+	 * @param cuantosQuedan
+	 */
+	public void setCuantosQuedan(int cuantosQuedan) {
+		this.cuantosQuedan = cuantosQuedan;
+	}
+	
+	
 
 }

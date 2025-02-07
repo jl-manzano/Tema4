@@ -32,19 +32,35 @@ public class Punto {
 	}
 	
 	// Getters
+	/**
+	 * Devuelve la coordenada X
+	 * @return
+	 */
 	public int getX() {
 		return x;
 	}
 	
+	/**
+	 * Devuelve la coordenada Y
+	 * @return
+	 */
 	public int getY() {
 		return y;
 	}
 	
 	// Setters
+	/**
+	 * Definir Coordenada X
+	 * @param x
+	 */
 	public void setX(int x) {
 		this.x = x;
 	}
 	
+	/**
+	 * Definir Coordenada Y
+	 * @param y
+	 */
 	public void setY(int y) {
 		this.y = y;
 	}

@@ -17,15 +17,15 @@ public class PrincipalArticulo {
 		Articulo pijama = new Articulo("pijama", 24.5, 0.21, 50);
 
 		// mostrar resultado con iva incluido
-		System.out.println("Pijama - Precio:" + pijama.precio + "€ - IVA: " + pijama.iva + "% - " + "PVP:"
-				+ (pijama.precio + (pijama.precio * pijama.iva)) + "€");
+		System.out.println("Pijama - Precio:" + pijama.getPrecio() + "€ - IVA: " + pijama.getIva() + "% - " + "PVP:"
+				+ String.format("%.2f", (pijama.getPrecio() + (pijama.getPrecio() * pijama.getIva()))) + "€");
 
 		// cambiar precio
-		pijama.precio = 10;
+		pijama.setPrecio(10);
 
 		// volver a mostrar resultado con iva incluido (precio cambiado)
-		System.out.println("Pijama - Precio:" + pijama.precio + "€ - IVA: " + pijama.iva + "% - " + "PVP:"
-				+ (pijama.precio + (pijama.precio * pijama.iva)) + "€");
+		System.out.println("Pijama - Precio:" + pijama.getPrecio() + "€ - IVA: " + pijama.getIva() + "% - " + "PVP:"
+				+ String.format("%.2f", (pijama.getPrecio() + (pijama.getPrecio() * pijama.getIva()))) + "€");
 	}
 
 }
