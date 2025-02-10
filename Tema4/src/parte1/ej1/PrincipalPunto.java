@@ -40,5 +40,31 @@ public class PrincipalPunto {
 		System.out.println("Punto 1: " + p1.getX() + "," + p1.getY());
 		System.out.println("Punto 2: " + p2.getX() + "," + p2.getY());
 		System.out.println("Punto 3: " + p3.getX() + "," + p3.getY());
+		
+		// modificar coordenadas
+		// punto 1
+		p1.setXY(3, 5);
+
+		// punto 2
+		p2.setXY(-5, 10);
+		
+		// modificar coordenadas
+		// punto 3
+		p3.setXY(3, 9);
+		
+		System.out.println("\nCOORDENADAS MODIFICADAS POR PUNTO (Setter Doble)");
+
+		// mostrar coordenadas modificadas por punto
+		System.out.println("Punto 1: " + p1.getX() + "," + p1.getY());
+		System.out.println("Punto 2: " + p2.getX() + "," + p2.getY());
+		System.out.println("Punto 3: " + p3.getX() + "," + p3.getY());
+		
+		// llamar a método distancia para calcular distancia entre 2 puntos
+		System.out.println("\nDISTANCIA ENTRE 2 PUNTOS");
+		System.out.println(p1.distancia(p3));
+		
+		// llamar a método toString para devolver cadena con las coordenadas de un punto
+		System.out.println("\nCOORDENADAS PUNTO 1: " + p1.toString());
+
 	}
 }
