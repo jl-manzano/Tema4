@@ -50,7 +50,7 @@ public class Articulo {
 	/**
 	 * Getter que devuelve nombre de artículo
 	 * 
-	 * @return
+	 * @return Devuelve el nombre del artículo
 	 */
 	public String getNombre() {
 		return nombre;
@@ -59,7 +59,7 @@ public class Articulo {
 	/**
 	 * Setter para definir nombre del artículo
 	 * 
-	 * @param nombre
+	 * @param nombre Nombre del artículo
 	 */
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
@@ -68,7 +68,7 @@ public class Articulo {
 	/**
 	 * Getter que devuelve el precio del artículo
 	 * 
-	 * @return
+	 * @return Devuelve el precio del artículo
 	 */
 	public double getPrecio() {
 		return precio;
@@ -77,7 +77,7 @@ public class Articulo {
 	/**
 	 * Setter para definir precio del artículo
 	 * 
-	 * @param precio
+	 * @param precio Precio del artículo
 	 */
 	public void setPrecio(double precio) {
 		this.precio = precio;
@@ -86,7 +86,7 @@ public class Articulo {
 	/**
 	 * Getter que devuelve el IVA aplicado sobre el producto
 	 * 
-	 * @return
+	 * @return Devuelve el IVA aplicado sobre el producto
 	 */
 	public double getIva() {
 		return iva;
@@ -95,7 +95,7 @@ public class Articulo {
 	/**
 	 * Setter para definir IVA aplicado sobre el producto
 	 * 
-	 * @param iva
+	 * @param iva IVA aplicado sobre el producto
 	 */
 	public void setIva(double iva) {
 		this.iva = iva;
@@ -104,7 +104,7 @@ public class Articulo {
 	/**
 	 * Getter que devuelve el stock del producto
 	 * 
-	 * @return
+	 * @return Devuelve el stock del producto
 	 */
 	public int getCuantosQuedan() {
 		return cuantosQuedan;
@@ -113,15 +113,15 @@ public class Articulo {
 	/**
 	 * Setter para definir stock del producto
 	 * 
-	 * @param cuantosQuedan
+	 * @param cuantosQuedan Stock del producto
 	 */
 	public void setCuantosQuedan(int cuantosQuedan) {
 		this.cuantosQuedan = cuantosQuedan;
 	}
 
 	/**
-	 * 
-	 * @return
+	 * Getter que devuelve el precio de un producto con IVA incluido
+	 * @return Devuelve el precio de un producto con IVA incluido
 	 */
 	public double getPVP() {
 		// variable para calcular el precio con IVA de un producto
@@ -134,6 +134,11 @@ public class Articulo {
 		return precioPVP;
 	}
 
+	/**
+	 * Getter que devuelve el PVP con un descuento incluido pasado como parámetro
+	 * @param descuento Descuento aplicado sobre el producto
+	 * @return Devuelve el PVP con un descuento incluido
+	 */
 	public double getPVPDescuento(double descuento) {
 		// variable para calcular el precio con IVA de un producto
 		double precioConDescuento;
@@ -146,9 +151,9 @@ public class Articulo {
 	}
 
 	/**
-	 * 
-	 * @param cantidad
-	 * @return
+	 * Método para actualizar el stock de un producto tras vender cantidad 'x' pasada como parámetro
+	 * @param cantidad Cantidad que se desea vender / desea comprar un cliente
+	 * @return Devuelve si ha sido posible vender esa cantidad de ejemplares de un producto
 	 */
 	public boolean vender(int cantidad) {
 		// variable boolean para almacenar si es posible vender x cantidad de productos
@@ -167,15 +172,16 @@ public class Articulo {
 	}
 	
 	/**
-	 * 
-	 * @param cantidad
+	 * Método para actualizar el stock de un producto tras almacenar una cantidad 'x' pasada como parámetro
+	 * @param cantidad Cantidad nueva que se va a sumar a la restante en el almacén
 	 */
 	public void almacenar(int cantidad){
 		this.cuantosQuedan += cantidad;
 	}
 	
 	/**
-	 * 
+	 * Método para devolver los datos de un producto
+	 * @return Devuelve los datos de un producto en formato String
 	 */
 	public String toString() {
 		return ("Nombre del producto: " + this.nombre + ", Precio: " + this.precio + "€, Stock: " + this.cuantosQuedan);

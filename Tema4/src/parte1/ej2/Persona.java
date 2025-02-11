@@ -51,36 +51,36 @@ public class Persona {
 
 	// Getters
 	/**
-	 * Devuelve DNI de persona
+	 * Getter que devuelve el DNI de una persona
 	 * 
-	 * @return
+	 * @return Devuelve el DNI de una persona
 	 */
 	public String getDni() {
 		return dni;
 	}
 
 	/**
-	 * Devuelve nombre de persona
+	 * Getter que devuelve el nombre de una persona
 	 * 
-	 * @return
+	 * @return Devuelve el nombre de una persona
 	 */
 	public String getNombre() {
 		return nombre;
 	}
 
 	/**
-	 * Devuelve apellidos de persona
+	 * Getter que devuelve los apellidos de una persona
 	 * 
-	 * @return
+	 * @return Devuelve los apellidos de una persona
 	 */
 	public String getApellidos() {
 		return apellidos;
 	}
 
 	/**
-	 * Devuelve edad persona
+	 * Getter que devuelve la edad de una persona
 	 * 
-	 * @return
+	 * @return Devuelve la edad de una persona
 	 */
 	public int getEdad() {
 		return edad;
@@ -88,27 +88,27 @@ public class Persona {
 
 	// Setters
 	/**
-	 * Definir nombre de la persona
+	 * Setter para definir nombre de la persona
 	 * 
-	 * @param nombre
+	 * @param nombre Nombre de la persona
 	 */
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
 
 	/**
-	 * Definir apellidos de la persona
+	 * Setter para definir los apellidos de la persona
 	 * 
-	 * @param apellidos
+	 * @param apellidos Apellidos de la persona
 	 */
 	public void setApellidos(String apellidos) {
 		this.apellidos = apellidos;
 	}
 
 	/**
-	 * Definir edad de la persona
+	 * Setter para definir la edad de la persona
 	 * 
-	 * @param edad
+	 * @param edad Edad de la persona
 	 */
 	public void setEdad(int edad) {
 		this.edad = edad;
