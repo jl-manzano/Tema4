@@ -32,6 +32,11 @@ public class CuentaCorriente {
 	 * Saldo de la persona a la que pertenece la cuenta corriente
 	 */
 	private double saldo;
+	
+	/**
+	 * Nacionalidad de la persona a la que pertenece la cuenta corriente
+	 */
+	private Nacionalidad nacion;
 
 	/**
 	 * Constructor que inicializa una cuenta corriente con un DNI y un saldo
@@ -161,5 +166,75 @@ public class CuentaCorriente {
 	 * equals: Dos cuentas corrientes se consideran iguales si coinciden el DNI y el
 	 * nombre.
 	 */
+	
+	/**
+	 * 
+	 * @param dinero
+	 * @return
+	 */
+	public boolean sacarDinero(double dinero) {
+		// variable booleana -> almacenar si es posible sacar dinero de la cuenta corriente o no
+		boolean posible = true;
+		
+		// condicional if -> determinar si el saldo es >= al dinero que se quiere extraer del cajero
+		if (this.saldo < dinero) {
+			posible = false;
+		} else {
+			this.saldo -= dinero;
+		}
+		
+		// devuelve si es posible o no sacar dinero que se desea extraer de la cuenta corriente
+		return posible;
+	}
+	
+	/**
+	 * 
+	 * @param dinero
+	 * @return
+	 */
+	public boolean ingresarDinero(double dinero) {
+		// variable para almacenar si es posible ingresar una cantidad de dinero (es decir, es positiva)
+		boolean posible = true;
+		
+		// condicional if -> determinar si el dinero que se desea ingresar en el cajero es > 0
+		if (dinero <= 0) {
+			posible = false;
+		} else {
+			this.saldo += dinero;
+		}
+		
+		// devuelve si es posible o no ingresar una cantidad de dinero (es +)
+		return posible;
+	}
+	
+	/**
+	 * Método que devuelve un string con todos los atributos del objeto
+	 * @return Devuelve todos los atributos de la Cuenta Corriente
+	 */
+	@Override
+	public String toString() {
+		return "DNI: " + dni + ", nombre: " + nombre + ", saldo: " + saldo + "€, nacionalidad: "
+				+ nacion;
+	}
+	
+	/**
+	 * Método equals que compara 2 objetos
+	 * @return Devuelve si el DNI y el nombre de 2 personas (objetos) son iguales
+	 */
+	@Override
+	public boolean equals(Object obj) {
+		// variable booleana para almacenar si el DNI y nombre de 2 personas son iguales
+		boolean sonIguales = false;
+		
+		// hacer parámetro obj un CuentaCorriente (castear) -> comparar y no de error
+		CuentaCorriente objeto = (CuentaCorriente) obj;
+		
+		// condicional if -> determinar si Dni y nombre de 2 personas son iguales
+		if(this.dni.equals(objeto.dni) && this.nombre.equals(objeto.nombre)) {
+			sonIguales = true;
+		}
+		
+		return sonIguales;
+	}
 
 }
