@@ -32,17 +32,16 @@ public class Punto {
 	}
 	
 	// Getters
-	/**
-	 * Devuelve la coordenada X
-	 * @return
+	/** Getter que devuelve la coordenada X del punto
+	 * @return Coordenada X del punto
 	 */
 	public int getX() {
 		return x;
 	}
 	
 	/**
-	 * Devuelve la coordenada Y
-	 * @return
+	 * Getter que devuelve la coordenada Y del punto
+	 * @return Coordenada Y del punto
 	 */
 	public int getY() {
 		return y;
@@ -50,16 +49,16 @@ public class Punto {
 	
 	// Setters
 	/**
-	 * Definir Coordenada X
-	 * @param x
+	 * Setter para definir coordenada X del punto
+	 * @param x Establecer coordenada X del punto
 	 */
 	public void setX(int x) {
 		this.x = x;
 	}
 	
 	/**
-	 * Definir Coordenada Y
-	 * @param y
+	 * Setter para definir coordenada Y del punto
+	 * @param y Establecer coordenada Y del punto
 	 */
 	public void setY(int y) {
 		this.y = y;
@@ -67,8 +66,8 @@ public class Punto {
 	
 	/**
 	 * Setter para definir las 2 coordenadas de un punto
-	 * @param x Coordenada x del punto
-	 * @param y Coordenada y del punto
+	 * @param x Establecer coordenada x del punto
+	 * @param y Establecer coordenada y del punto
 	 */
 	public void setXY(int x, int y) {
 		this.x = x;
@@ -103,7 +102,7 @@ public class Punto {
 
 	/**
 	 * Método para devolver las coordenadas de un punto "(x,y)"
-	 * @return Devuelve las coordenadas de un punto
+	 * @return Devuelve las coordenadas X e Y de un punto en formato String
 	 */
 	public String toString() {
 		return ("(" + this.x + "," + this.y + ")");

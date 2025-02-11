@@ -36,67 +36,140 @@ public class Rectangulo {
 		
 	}
 	/**
-	 * Devuelve coordenada X1
-	 * @return
+	 * Getter que devuelve coordenada x de la esquina inferior izquierda 
+	 * @return Coordenada x de la esquina inferior izquierda
 	 */
 	public int getX1() {
 		return x1;
 	}
 
 	/**
-	 * Definir coordenada X1
-	 * @param x1
+	 * Setter para definir coordenada x de la esquina inferior izquierda
+	 * @param x1 Establecer coordenada x de la esquina inferior izquierda
 	 */
 	public void setX1(int x1) {
 		this.x1 = x1;
 	}
 
 	/**
-	 * Devuelve coordenada Y1
-	 * @return
+	 * Getter que devuelve coordenada y de la esquina inferior izquierda 
+	 * @return Coordenada y de la esquina inferior izquierda
 	 */
 	public int getY1() {
 		return y1;
 	}
 
 	/**
-	 * Definir coordenada Y1
-	 * @param y1
+	 * Setter para definir coordenada y de la esquina inferior izquierda
+	 * @param y1 Establecer coordenada y de la esquina inferior izquierda
 	 */
 	public void setY1(int y1) {
 		this.y1 = y1;
 	}
 
 	/**
-	 * Devuelve coordenada X2
-	 * @return
+	 * Getter que devuelve coordenada x de la esquina superior derecha 
+	 * @return Coordenada x de la esquina suoerior derecha
 	 */
 	public int getX2() {
 		return x2;
 	}
 
 	/**
-	 * Definir coordenada X2
-	 * @param x2
+	 * Setter para definir coordenada x de la esquina superior derecha
+	 * @param x1 Establecer coordenada x de la esquina superior derecha
 	 */
 	public void setX2(int x2) {
 		this.x2 = x2;
 	}
 
 	/**
-	 * Devuelve coordenada Y2
-	 * @return
+	 * Getter que devuelve coordenada y de la esquina esquina superior derecha
+	 * @return Coordenada y de la esquina superior derecha
 	 */
 	public int getY2() {
 		return y2;
 	}
 
 	/**
-	 * Definir coordenada Y2
-	 * @param y2
+	 * Setter para definir coordenada y de la esquina superior derecha
+	 * @param y1 Establecer coordenada y de la esquina superior derecha
 	 */
 	public void setY2(int y2) {
 		this.y2 = y2;
+	}
+	
+	/**
+	 * Setter para definir las 2 coordenadas x e y de la esquina inferior izquierda de un rectángulo
+	 * @param x1 Coordenada x de la esquina inferior izquierda
+	 * @param y1 Coordenada y de la esquina inferior izquierda
+	 */
+	public void setX1Y1(int x1, int y1) {
+		this.x1 = x1;
+		this.y1 = y1;
+	}
+	
+	/**
+	 * Setter para definir las 2 coordenadas x e y de la esquina superior derecha de un rectángulo
+	 * @param x2 Coordenada x de la esquina superior derecha
+	 * @param y2 Coordenada y de la esquina superior derecha
+	 */
+	public void setX2Y2(int x2, int y2) {
+		this.x2 = x2;
+		this.y2 = y2;
+	}
+	
+	/**
+	 * Setter para definir las 4 coordenadas de un rectángulo (x e y esquina inferior izquierda) (x e y esquina superior derecha)
+	 * @param x1 Definir coordenada x de la esquina inferior izquierda
+	 * @param y1 Definir coordenada y de la esquina inferior izquierda
+	 * @param x2 Definir coordenada x de la esquina superior derecha
+	 * @param y2 Definir coordenada y de la esquina superior derecha
+	 */
+	public void setAll(int x1, int y1, int x2, int y2) {
+		this.x1 = x1;
+		this.y1 = y1;
+		this.x2 = x2;
+		this.y2 = y2;
+	}
+	
+	/**
+	 * Método para calcular el perímetro de un rectángulo
+	 * @return Devuelve el perímetro del rectángulo
+	 */
+	public double getPerimetro() {
+		// variable para almacenar resultado del cálculo del perímetro del rectángulo
+		double perim;
+		
+		// calcular perímetro del rectángulo
+		perim = (Math.abs(this.x1 - this.x2) * 2 + Math.abs(this.y1 - this.y2) * 2);
+		
+		// devolver perímetro del rectángulo
+		return perim;
+	}
+	
+	/**
+	 * Método para calcular el área de un rectángulo
+	 * @return Devuelve el área del rectángulo
+	 */
+	public double getArea() {
+		// variable para almacenar resultado del cálculo del área del rectángulo
+		double area;
+		
+		// calcular área del rectángulo
+		area = (Math.abs(this.x1 - this.x2) * Math.abs(this.y1 - this.y2));
+	
+		// devolver área del rectángulo
+		return area;
+	
+	}
+	
+	/**
+	 * Método para devolver las coordenadas de ambas esquinas de un rectángulo "(x1,y1)" y "(x2,y2)"
+	 * @return Devuelve las coordenadas de ambas esquinas de un rectángulo en formato String
+	 */
+	public String toString() {
+		return ("(" + this.x1 + "," + this.y1 + ")" + " y " + "(" + this.x2 + "," + this.y2 + ")");
 	}
 
 }

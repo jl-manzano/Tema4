@@ -78,6 +78,27 @@ public class PrincipalPersona {
 		System.out.println("\n" + p2.getNombre() + " " + p2.getApellidos() + " con DNI " + p2.getDni() + (p2.getEdad() >= 18 ? " es mayor de edad." : " no es mayor de edad."));
 		// cerrar scanner
 		sc.close();
+		
+		// mostrar información de personas
+		System.out.println("DATOS DE PERSONA 1: \n" + p1);
+		
+		// mostrar información de personas
+		System.out.println("\nDATOS DE PERSONA 2: \n" + p2);
+		
+		// verificar si son mayores de edad
+		System.out.println("\n" + p1.getNombre() + " " + p1.getApellidos() + 
+	            (p1.esMayorEdad() ? " es mayor de edad." : " no es mayor de edad."));
+	
+		System.out.println("\n" + p2.getNombre() + " " + p2.getApellidos() + (p1.esMayorEdad() ? " es mayor de edad." : " no es mayor de edad."));
+	
+		// verificar si son jubilados
+		System.out.println("\n" + p1.getNombre() + " " + p1.getApellidos() + 
+	            (p1.esJubilado() ? " es jubilad@." : " no es jubulad@."));
+	
+		System.out.println("\n" + p2.getNombre() + " " + p2.getApellidos() + (p1.esMayorEdad() ? " es jubilad@." : " no es jubulad@."));
+		
+		// calcular diferencia de edad entre 2 personas
+		System.out.println("Diferencia de edad entre ambas personas: " + p1.diferenciaEdad(p2) + " años.");
 	}
 
 }

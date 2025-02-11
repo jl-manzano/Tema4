@@ -48,7 +48,8 @@ public class Articulo {
 	}
 
 	/**
-	 * Devuelve nombre de artículo
+	 * Getter que devuelve nombre de artículo
+	 * 
 	 * @return
 	 */
 	public String getNombre() {
@@ -56,7 +57,8 @@ public class Articulo {
 	}
 
 	/**
-	 * Definir nombre del artículo
+	 * Setter para definir nombre del artículo
+	 * 
 	 * @param nombre
 	 */
 	public void setNombre(String nombre) {
@@ -64,7 +66,8 @@ public class Articulo {
 	}
 
 	/**
-	 * Devuelve precio del artículo
+	 * Getter que devuelve el precio del artículo
+	 * 
 	 * @return
 	 */
 	public double getPrecio() {
@@ -72,7 +75,8 @@ public class Articulo {
 	}
 
 	/**
-	 * Definir precio del artículo
+	 * Setter para definir precio del artículo
+	 * 
 	 * @param precio
 	 */
 	public void setPrecio(double precio) {
@@ -80,7 +84,8 @@ public class Articulo {
 	}
 
 	/**
-	 * Devuelve el IVA aplicado sobre el producto
+	 * Getter que devuelve el IVA aplicado sobre el producto
+	 * 
 	 * @return
 	 */
 	public double getIva() {
@@ -88,7 +93,8 @@ public class Articulo {
 	}
 
 	/**
-	 * Definir IVA aplicado sobre el producto
+	 * Setter para definir IVA aplicado sobre el producto
+	 * 
 	 * @param iva
 	 */
 	public void setIva(double iva) {
@@ -96,7 +102,8 @@ public class Articulo {
 	}
 
 	/**
-	 * Devuelve el stock del producto
+	 * Getter que devuelve el stock del producto
+	 * 
 	 * @return
 	 */
 	public int getCuantosQuedan() {
@@ -104,13 +111,74 @@ public class Articulo {
 	}
 
 	/**
-	 * Definir stock del producto
+	 * Setter para definir stock del producto
+	 * 
 	 * @param cuantosQuedan
 	 */
 	public void setCuantosQuedan(int cuantosQuedan) {
 		this.cuantosQuedan = cuantosQuedan;
 	}
+
+	/**
+	 * 
+	 * @return
+	 */
+	public double getPVP() {
+		// variable para calcular el precio con IVA de un producto
+		double precioPVP;
+
+		// calcular precio con pvp incluido
+		precioPVP = (this.precio * this.iva);
+
+		// devolver precio con PVP incluido
+		return precioPVP;
+	}
+
+	public double getPVPDescuento(double descuento) {
+		// variable para calcular el precio con IVA de un producto
+		double precioConDescuento;
+
+		// calcular precio con pvp incluido
+		precioConDescuento = (this.precio * this.iva * (1 - descuento / 100));
+
+		// devolver precio con descuento
+		return precioConDescuento;
+	}
+
+	/**
+	 * 
+	 * @param cantidad
+	 * @return
+	 */
+	public boolean vender(int cantidad) {
+		// variable boolean para almacenar si es posible vender x cantidad de productos
+		boolean posible = true;
+		
+		// condicional if -> comparar cantidad de artículos que se quieren vender con el stock
+		if (cantidad > this.cuantosQuedan) {
+			posible = false;
+		} else {
+			this.cuantosQuedan = this.cuantosQuedan - cantidad;
+		}
+		
+		// devolver resultado de evaluación si es posible o no vender x cantidad de productos
+		return posible;
+
+	}
 	
+	/**
+	 * 
+	 * @param cantidad
+	 */
+	public void almacenar(int cantidad){
+		this.cuantosQuedan += cantidad;
+	}
 	
+	/**
+	 * 
+	 */
+	public String toString() {
+		return ("Nombre del producto: " + this.nombre + ", Precio: " + this.precio + "€, Stock: " + this.cuantosQuedan);
+	}
 
 }

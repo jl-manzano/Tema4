@@ -48,63 +48,131 @@ public class Persona {
 			this.edad = edad;
 		}
 	}
-	
+
 	// Getters
 	/**
 	 * Devuelve DNI de persona
+	 * 
 	 * @return
 	 */
 	public String getDni() {
 		return dni;
 	}
-	
+
 	/**
 	 * Devuelve nombre de persona
+	 * 
 	 * @return
 	 */
 	public String getNombre() {
 		return nombre;
 	}
-	
+
 	/**
 	 * Devuelve apellidos de persona
+	 * 
 	 * @return
 	 */
 	public String getApellidos() {
 		return apellidos;
 	}
-	
+
 	/**
 	 * Devuelve edad persona
+	 * 
 	 * @return
 	 */
 	public int getEdad() {
 		return edad;
 	}
-	
+
 	// Setters
 	/**
 	 * Definir nombre de la persona
+	 * 
 	 * @param nombre
 	 */
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	
+
 	/**
 	 * Definir apellidos de la persona
+	 * 
 	 * @param apellidos
 	 */
 	public void setApellidos(String apellidos) {
 		this.apellidos = apellidos;
 	}
-	
+
 	/**
 	 * Definir edad de la persona
+	 * 
 	 * @param edad
 	 */
 	public void setEdad(int edad) {
 		this.edad = edad;
+	}
+
+	/**
+	 * Método que comprueba si una persona es mayor de edad o no
+	 * 
+	 * @return Devuelve si la persona es mayor de edad / no
+	 */
+	public boolean esMayorEdad() {
+
+		// variable boolean para almacenar si persona es > edad / no
+		boolean isAdult;
+
+		// comprobar si persona es > de edad
+		isAdult = edad >= 18 ? true : false;
+
+		// devolver si persona es adulta / no
+		return isAdult;
+	}
+
+	/**
+	 * Método que comprueba si una persona es jubilada o no (65 años / +)
+	 * 
+	 * @return Devuelve si la persona es jubilada / no
+	 */
+	public boolean esJubilado() {
+		// variable boolean para almacenar si persona tiene 65 años / +
+		boolean isRetired;
+
+		// comprobar si persona es jubilado o no
+		isRetired = edad >= 65 ? true : false;
+
+		// devolver si persona es jubilada o no
+		return isRetired;
+
+	}
+
+	/**
+	 * Método que calcula la diferencia de edad entre 2 personas
+	 * 
+	 * @param p Persona nueva
+	 * @return Devuelve el resultado de la diferencia de edad entre 2 personas
+	 */
+	public int diferenciaEdad(Persona p) {
+		// variable para almacenar la diferencia de edad entre 2 personas
+		int diferencia;
+
+		// realizar diferencia de edades entre 2 personas
+		diferencia = Math.abs(this.edad - p.edad);
+
+		// devolver resultado de la diferencia de edad entre 2 personas
+		return diferencia;
+
+	}
+
+	/**
+	 * Método para devolver los datos correspondientes de una persona
+	 * @return Devuelve los datos de una persona en formato String
+	 */
+	public String toString() {
+		return "DNI: " + this.dni + "\nNombre: " + this.nombre + "\nApellidos: " + this.apellidos + "\nEdad: "
+				+ this.edad;
 	}
 
 }

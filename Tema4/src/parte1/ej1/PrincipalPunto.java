@@ -52,19 +52,28 @@ public class PrincipalPunto {
 		// punto 3
 		p3.setXY(3, 9);
 		
-		System.out.println("\nCOORDENADAS MODIFICADAS POR PUNTO (Setter Doble)");
+        System.out.println("\nCOORDENADAS MODIFICADAS CON setXY:");
+        System.out.println("Punto 1: " + p1);
+        System.out.println("Punto 2: " + p2);
+        System.out.println("Punto 3: " + p3);
 
-		// mostrar coordenadas modificadas por punto
-		System.out.println("Punto 1: " + p1.getX() + "," + p1.getY());
-		System.out.println("Punto 2: " + p2.getX() + "," + p2.getY());
-		System.out.println("Punto 3: " + p3.getX() + "," + p3.getY());
+        // Desplazar los puntos con desplaza(dx, dy)
+        p1.desplaza(2, -1);
+        p2.desplaza(-3, 4);
+        p3.desplaza(0, -7);
+
+        System.out.println("\nCOORDENADAS DESPLAZADAS:");
+        System.out.println("Punto 1: " + p1);
+        System.out.println("Punto 2: " + p2);
+        System.out.println("Punto 3: " + p3);
+
 		
 		// llamar a método distancia para calcular distancia entre 2 puntos
-		System.out.println("\nDISTANCIA ENTRE 2 PUNTOS");
+		System.out.println("\nDISTANCIA ENTRE PUNTO 1 Y PUNTO 3: ");
 		System.out.println(p1.distancia(p3));
 		
 		// llamar a método toString para devolver cadena con las coordenadas de un punto
-		System.out.println("\nCOORDENADAS PUNTO 1: " + p1.toString());
+		System.out.println("\nCOORDENADAS PUNTO 1: " + p1);
 
 	}
 }
