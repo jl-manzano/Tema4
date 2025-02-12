@@ -99,12 +99,15 @@ public class CuentaCorriente {
 		if (saldo > 100) {
 			this.saldo = saldo;
 		}
+		
+	    this.nacion = (nacion != null) ? nacion : Nacionalidad.EXTRANJERA; 
 
-		switch (nacion) {
-		case ESPAÑOLA -> nacion = Nacionalidad.ESPAÑOLA;
-		case EXTRANJERA -> nacion = Nacionalidad.EXTRANJERA;
-		default -> nacion = Nacionalidad.EXTRANJERA;
-		}
+
+//		switch (nacion) {
+//		case ESPAÑOLA -> nacion = Nacionalidad.ESPAÑOLA;
+//		case EXTRANJERA -> nacion = Nacionalidad.EXTRANJERA;
+//		default -> nacion = Nacionalidad.EXTRANJERA;
+//		}
 
 	}
 
@@ -193,7 +196,7 @@ public class CuentaCorriente {
 
 		// condicional if -> determinar si el saldo es >= al dinero que se quiere
 		// extraer del cajero
-		if (this.saldo < dinero) {
+		if (this.saldo < dinero && this.saldo > 0) {
 			posible = false;
 		} else {
 			this.saldo -= dinero;
