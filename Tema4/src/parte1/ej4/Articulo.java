@@ -62,7 +62,9 @@ public class Articulo {
 	 * @param nombre Nombre del artículo
 	 */
 	public void setNombre(String nombre) {
-		this.nombre = nombre;
+		if (nombre != null && !nombre.isBlank()) {
+			this.nombre = nombre;
+		}
 	}
 
 	/**
@@ -80,7 +82,9 @@ public class Articulo {
 	 * @param precio Precio del artículo
 	 */
 	public void setPrecio(double precio) {
-		this.precio = precio;
+		if (precio >= 0) {
+			this.precio = precio;
+		}
 	}
 
 	/**
@@ -98,7 +102,10 @@ public class Articulo {
 	 * @param iva IVA aplicado sobre el producto
 	 */
 	public void setIva(double iva) {
-		this.iva = iva;
+		if (iva >= 0) {
+
+			this.iva = iva;
+		}
 	}
 
 	/**
@@ -116,11 +123,14 @@ public class Articulo {
 	 * @param cuantosQuedan Stock del producto
 	 */
 	public void setCuantosQuedan(int cuantosQuedan) {
-		this.cuantosQuedan = cuantosQuedan;
+		if (cuantosQuedan >= 0) {
+			this.cuantosQuedan = cuantosQuedan;
+		}
 	}
 
 	/**
 	 * Getter que devuelve el precio de un producto con IVA incluido
+	 * 
 	 * @return Devuelve el precio de un producto con IVA incluido
 	 */
 	public double getPVP() {
@@ -136,6 +146,7 @@ public class Articulo {
 
 	/**
 	 * Getter que devuelve el PVP con un descuento incluido pasado como parámetro
+	 * 
 	 * @param descuento Descuento aplicado sobre el producto
 	 * @return Devuelve el PVP con un descuento incluido
 	 */
@@ -151,36 +162,44 @@ public class Articulo {
 	}
 
 	/**
-	 * Método para actualizar el stock de un producto tras vender cantidad 'x' pasada como parámetro
+	 * Método para actualizar el stock de un producto tras vender cantidad 'x'
+	 * pasada como parámetro
+	 * 
 	 * @param cantidad Cantidad que se desea vender / desea comprar un cliente
-	 * @return Devuelve si ha sido posible vender esa cantidad de ejemplares de un producto
+	 * @return Devuelve si ha sido posible vender esa cantidad de ejemplares de un
+	 *         producto
 	 */
 	public boolean vender(int cantidad) {
 		// variable boolean para almacenar si es posible vender x cantidad de productos
 		boolean posible = true;
-		
-		// condicional if -> comparar cantidad de artículos que se quieren vender con el stock
+
+		// condicional if -> comparar cantidad de artículos que se quieren vender con el
+		// stock
 		if (cantidad > this.cuantosQuedan) {
 			posible = false;
 		} else {
 			this.cuantosQuedan = this.cuantosQuedan - cantidad;
 		}
-		
-		// devolver resultado de evaluación si es posible o no vender x cantidad de productos
+
+		// devolver resultado de evaluación si es posible o no vender x cantidad de
+		// productos
 		return posible;
 
 	}
-	
+
 	/**
-	 * Método para actualizar el stock de un producto tras almacenar una cantidad 'x' pasada como parámetro
+	 * Método para actualizar el stock de un producto tras almacenar una cantidad
+	 * 'x' pasada como parámetro
+	 * 
 	 * @param cantidad Cantidad nueva que se va a sumar a la restante en el almacén
 	 */
-	public void almacenar(int cantidad){
+	public void almacenar(int cantidad) {
 		this.cuantosQuedan += cantidad;
 	}
-	
+
 	/**
 	 * Método para devolver los datos de un producto
+	 * 
 	 * @return Devuelve los datos de un producto en formato String
 	 */
 	public String toString() {

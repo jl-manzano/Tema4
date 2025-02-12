@@ -48,7 +48,9 @@ public class Rectangulo {
 	 * @param x1 Establecer coordenada x de la esquina inferior izquierda
 	 */
 	public void setX1(int x1) {
-		this.x1 = x1;
+		if (x1 < x2) {
+			this.x1 = x1;
+		}
 	}
 
 	/**
@@ -64,7 +66,9 @@ public class Rectangulo {
 	 * @param y1 Establecer coordenada y de la esquina inferior izquierda
 	 */
 	public void setY1(int y1) {
-		this.y1 = y1;
+		if (y1 < y2) {
+			this.y1 = y1;
+		}
 	}
 
 	/**
@@ -80,7 +84,10 @@ public class Rectangulo {
 	 * @param x1 Establecer coordenada x de la esquina superior derecha
 	 */
 	public void setX2(int x2) {
-		this.x2 = x2;
+		if (x1 < x2) {
+
+			this.x2 = x2;
+		}
 	}
 
 	/**
@@ -96,7 +103,9 @@ public class Rectangulo {
 	 * @param y1 Establecer coordenada y de la esquina superior derecha
 	 */
 	public void setY2(int y2) {
-		this.y2 = y2;
+		if (y1 < y2) {
+			this.y2 = y2;
+		}
 	}
 	
 	/**
@@ -105,8 +114,11 @@ public class Rectangulo {
 	 * @param y1 Coordenada y de la esquina inferior izquierda
 	 */
 	public void setX1Y1(int x1, int y1) {
-		this.x1 = x1;
-		this.y1 = y1;
+		if (x1 < x2 && y1 < y2) {
+			this.x1 = x1;
+			this.y1 = y1;
+		}
+
 	}
 	
 	/**
@@ -115,8 +127,11 @@ public class Rectangulo {
 	 * @param y2 Coordenada y de la esquina superior derecha
 	 */
 	public void setX2Y2(int x2, int y2) {
-		this.x2 = x2;
-		this.y2 = y2;
+		if (x1 < x2 && y1 < y2) {
+			this.x2 = x2;
+			this.y2 = y2;
+		}
+
 	}
 	
 	/**
@@ -127,10 +142,12 @@ public class Rectangulo {
 	 * @param y2 Definir coordenada y de la esquina superior derecha
 	 */
 	public void setAll(int x1, int y1, int x2, int y2) {
-		this.x1 = x1;
-		this.y1 = y1;
-		this.x2 = x2;
-		this.y2 = y2;
+		if (x1 < x2 && y1 < y2) {
+			this.x1 = x1;
+			this.y1 = y1;
+			this.x2 = x2;
+			this.y2 = y2;
+		}
 	}
 	
 	/**

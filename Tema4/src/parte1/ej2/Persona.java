@@ -93,7 +93,9 @@ public class Persona {
 	 * @param nombre Nombre de la persona
 	 */
 	public void setNombre(String nombre) {
-		this.nombre = nombre;
+		if (nombre != null && !nombre.isBlank()) {
+			this.nombre = nombre;
+		}
 	}
 
 	/**
@@ -102,7 +104,9 @@ public class Persona {
 	 * @param apellidos Apellidos de la persona
 	 */
 	public void setApellidos(String apellidos) {
-		this.apellidos = apellidos;
+		if (apellidos != null && !apellidos.isBlank()) {
+			this.apellidos = apellidos;
+		}
 	}
 
 	/**
@@ -111,7 +115,9 @@ public class Persona {
 	 * @param edad Edad de la persona
 	 */
 	public void setEdad(int edad) {
-		this.edad = edad;
+		if (edad >= 0) {
+			this.edad = edad;
+		}
 	}
 
 	/**
@@ -168,6 +174,7 @@ public class Persona {
 
 	/**
 	 * Método para devolver los datos correspondientes de una persona
+	 * 
 	 * @return Devuelve los datos de una persona en formato String
 	 */
 	public String toString() {
