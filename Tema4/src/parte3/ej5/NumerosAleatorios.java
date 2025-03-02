@@ -1,13 +1,58 @@
 package parte3.ej5;
 
+import java.util.Random;
+
 public class NumerosAleatorios {
-	
-	public static int numerosAleatorios(int numero) {
-		
-		int res = 0;
-		
+
+	public static String numerosAleatorios(int numero) {
+
+		// Creamos la clase random
+		Random rand = new Random();
+
+		// Creamos la variable resultado
+		String res = "";
+
+		// Generamos los numeros aleatorios y los concatenamos al resultado
+		for (int i = 0; i < numero; i++) {
+			res += rand.nextInt(0, 2) + " ";
+		}
+
+		// Devolvemos el resultado
 		return res;
-		
 	}
-	
+
+	public static String numerosAleatorios(int numero, int max) {
+
+		// Creamos la clase random
+		Random rand = new Random();
+
+		// Creamos la variable resultado
+		String res = "";
+
+		// Generamos los numeros aleatorios y los concatenamos al resultado
+		for (int i = 0; i < numero; i++) {
+			res += rand.nextInt(0, max) + " ";
+		}
+
+		// Devolvemos el resultado
+		return res;
+	}
+
+	public static String numerosAleatorios(int numero, int max, int min) {
+
+		// Creamos la clase random
+		Random rand = new Random();
+
+		// Creamos la variable resultado
+		String res = "";
+
+		// Generamos los numeros aleatorios y los concatenamos al resultado
+		for (int i = 0; i < numero; i++) {
+			res += rand.nextInt(min, max) + " ";
+		}
+
+		// Devolvemos el resultado
+		return res;
+	}
+
 }

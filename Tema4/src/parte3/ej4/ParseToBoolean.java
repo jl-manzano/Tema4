@@ -1,4 +1,4 @@
-package parte3.ej;
+package parte3.ej4;
 
 public class ParseToBoolean {
 
