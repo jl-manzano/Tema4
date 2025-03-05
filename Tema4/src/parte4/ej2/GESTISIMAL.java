@@ -20,15 +20,46 @@ public class GESTISIMAL {
 		}
 
 	}
-	
-	public static void alta(Articulo articulo) {
-		articulos.add(articulo);
-		System.out.println("Artículo añadido con éxito");
+
+	public static boolean alta(Articulo articulo) {
+
+		return articulos.add(articulo);
 	}
 
-//	public static void baja(String nombre) {
-//		articulos.remove(articulo);
-//		System.out.println("Artículo añadido con éxito");
-//	}
+	public static boolean baja(String nombre) {
+		Articulo articuloBorrar = null;
+		boolean elim = false;
+
+		for (Articulo articulo : articulos) {
+			if (articuloBorrar == null && articulo.getNombre().equalsIgnoreCase(nombre)) {
+				articuloBorrar = articulo;
+			}
+		}
+
+		if (articuloBorrar != null) {
+			articulos.remove(articuloBorrar);
+			elim = true;
+		}
+		
+		return elim;
+
+	}
 	
+	public static boolean modificar(double precio, String nombre) {
+		boolean res = false;
+		Articulo articulo = null;
+		
+		for (Articulo busqueda : articulos) {
+			if (busqueda.getNombre().equalsIgnoreCase(nombre)) {
+				articulo = busqueda;
+				res = true;
+			}
+			
+			articulo.setPrecio(precio);
+			
+		}
+		
+		return res;
+	}
+
 }
