@@ -1,145 +1,213 @@
 package parte4.ej2;
 
+import java.util.Objects;
+
 public class Articulo {
-
-	// Creamos el atributo nombre para almacenar el nombre del articulo
-	private String nombre;
-
-	// Creamos el atributo precio para almacenar el precio sin IVA del articulo
-	private double precio;
-
-	// Creamos el atributo IVA para almacenar el IVA del articulo (siempre sera el
-	// mismo)
-	public static final double IVA = 21;
-
-	// Creamos el atributo cuantosQuedan para almacenar el stock del articulo
-	private int cuantosQuedan;
-
+	
 	/**
-	 * Constructor con todos los atributos
-	 * 
-	 * @param nombre.        No puede ser null o blanco
-	 * @param precio.        Tiene que ser mayor que 0
-	 * @param cuantosQuedan. Tiene que ser mayor o igual que 0
+	 * Nombre del articulo
 	 */
-	public Articulo(String nombre, double precio, int cuantosQuedan) {
-		if (nombre != null && !nombre.isBlank()) {
+	private String nombre = "Articulo";
+	
+	/**
+	 * Precio del articulo
+	 */
+	private double precio = 0;
+	
+	/**
+	 * IVA del articulo
+	 */
+	public static final int IVA = 21;
+	
+	/**
+	 * Stock del articulo
+	 */
+	private int cuantosQuedan = 0;
+	
+	/**
+	 * Constructor que inicializa los atributos de la clase Articulo y comprueba
+	 * que los valores sean validos para almacenarlos
+	 * 
+	 * @param nombre Nombre del producto
+	 * @param precio Precio del producto
+	 * @param cuantosQuedan Numero que indica cuantos articulos quedan en el almacen
+	 */
+	public Articulo(String nombre, double precio, int cuantosQuedan){
+		
+		if(nombre != null && !nombre.isEmpty() && nombre.length() < 20) {
 			this.nombre = nombre;
 		}
-		if (precio > 0) {
+		
+		if(precio > 0) {
 			this.precio = precio;
 		}
-		if (cuantosQuedan >= 0) {
+		
+		if(cuantosQuedan >= 0) {
 			this.cuantosQuedan = cuantosQuedan;
 		}
 	}
-
+	
 	/**
-	 * Muestra el nombre del articulo
+	 * Constructor que inicializa el atributo nombre de la clase Articulo y comprueba
+	 * que el valor sea valido para almacenarlo
 	 * 
-	 * @return Nombre del articulo
+	 * @param nombre Nombre del producto
+	 */
+	public Articulo(String nombre){
+		
+		if(nombre != null && !nombre.isEmpty() && nombre.length() < 20) {
+			this.nombre = nombre;
+		}
+	}
+	
+	/**
+	 * Mostramos el nombre del articulo
+	 * 
+	 * @return Devuelve el nombre del articulo
 	 */
 	public String getNombre() {
 		return nombre;
 	}
-
+	
 	/**
-	 * Muestra el precio del articulo
+	 * Modificamos el nombre del articulo y comprobamos si es valido
 	 * 
-	 * @return Precio del articulo
-	 */
-	double getPrecio() {
-		return precio;
-	}
-
-	/**
-	 * Modifica el nombre del articulo
-	 * 
-	 * @param nombre. Nuevo nombre del articulo
+	 * @param nombre Nombre del articulo
 	 */
 	public void setNombre(String nombre) {
-		this.nombre = nombre;
+		if(nombre != null && !nombre.isEmpty()) {
+			this.nombre = nombre;
+		}
 	}
-
+	
 	/**
-	 * Modifica el precio del articulo
+	 * Mostramos el precio del articulo
 	 * 
-	 * @param precio. Nuevo precio del articulo
+	 * @return Devuelve el precio del articulo
+	 */
+	public double getPrecio() {
+		return precio;
+	}
+	
+	/**
+	 * Modificamos el precio del articulo y comprobamos si es valido
+	 * 
+	 * @param precio Precio del articulo
 	 */
 	public void setPrecio(double precio) {
-		this.precio = precio;
+		if(precio >= 0) {
+			this.precio = precio;
+		}
 	}
-
+	
 	/**
-	 * Muestra la cantidad de stock del articulo
+	 * Mostramos el stock del articulo
 	 * 
-	 * @return Stock del articulo
+	 * @return Devuelve el stock del articulo
 	 */
 	public int getCuantosQuedan() {
 		return cuantosQuedan;
 	}
-
+	
 	/**
-	 * Muestra cuantos articulos quedan
+	 * Modificamos el stock del articulo y comprobamos si es valido
 	 * 
-	 * @param cuantosQuedan. Numero de articulos que quedan disponibles
+	 * @param cuantosQuedan Stock del articulo
 	 */
 	public void setCuantosQuedan(int cuantosQuedan) {
-		this.cuantosQuedan = cuantosQuedan;
+		if(cuantosQuedan >= 0) {
+			this.cuantosQuedan = cuantosQuedan;
+		}
 	}
-
+	
 	/**
-	 * Devuelve el precio de venta al publico con IVA incluido
+	 * Calclamos el precio total del producto y lo devolvemos
 	 * 
-	 * @return
+	 * @return Devuelve el PVP
 	 */
 	public double getPVP() {
-
-		double pvp = 0.0;
-
+		double pvp;
+		pvp = 0;
+		pvp = precio + ((precio * IVA) / 100);
 		return pvp;
-
 	}
-
+	
 	/**
-	 * Devuelve el PVP con un descuento pasado como argumento
+	 * Calcula el precio del producto con un descuento y lo devuelve
 	 * 
-	 * @param descuento
-	 * @return
+	 * @param descuento Descuento del producto
+	 * @return Devuelve el precio del producto con el descuento
 	 */
-	public double getPVPDescuento(double descuento) {
-
-		double pvpDescuento = 0.0;
-
+	public double getPVPDescuento(int descuento) {
+		double pvpDescuento;
+		pvpDescuento = 0;
+		pvpDescuento = precio + ((precio * IVA) / 100) - ((precio * descuento) / 100);
 		return pvpDescuento;
-
 	}
-
+	
 	/**
-	 * Actualiza los atributos del objeto tras vender una cantidad @return. Si es
-	 * posible devolvera true, false en caso contrario
-	 */
-	public boolean vender(int cantidad) {
-
-		boolean esPosible = false;
-
-		return esPosible;
-	}
-
-	/**
-	 * Actualiza los atributos del objeto tras almacenar una cantidad
+	 * Actualiza el valor del stock segun los que haya comprado el usuario si es valido y
+	 * devolvemos true si se ha realizado o false si no se ha realizado
 	 * 
-	 * @param cantidad
+	 * @param comprados Productos comprados por el usuario
+	 */
+	public boolean vende(int comprados) {
+		boolean esValido = false;
+		if(cuantosQuedan - comprados >= 0) {
+			this.cuantosQuedan = cuantosQuedan - comprados;
+			esValido = true;
+		}
+		return esValido;
+	}
+	
+	/**
+	 * Actualizamos el stock disponible segun el numero de unidades que dice el usuario que hay disponible si es valido
+	 * 
+	 * @param cantidad Numero de unidades que hay de un producto
 	 */
 	public void almacenar(int cantidad) {
-
+		if(cuantosQuedan - cantidad >= 0) {
+			this.cuantosQuedan = cuantosQuedan - cantidad;
+		}
 	}
-
+	
+	/**
+	 * Devolvemos la informacion del producto
+	 * 
+	 * @return Devuelve la cadena con la informacion
+	 */
 	@Override
 	public String toString() {
-		String articulo = "";
-
-		return articulo;
+		String cadena;
+		cadena = nombre + " - Precio: " + precio + "€ - IVA: " + Articulo.IVA + "% - PVP: " + getPVP() + "€ - Stock: " + cuantosQuedan + " unidades";
+		return cadena;
 	}
-
+	
+	/**
+	 * Metodo hash de la clase Articulo
+	 * 
+	 * @return Devuelve un objeto
+	 */
+	@Override
+	public int hashCode() {
+		return Objects.hash(nombre);
+	}
+	
+	/**
+	 * Metodo equals para comparar si los objetos son iguales
+	 * 
+	 * @return devuelve true si se ha realizado o false si no
+	 */
+	@Override
+	public boolean equals(Object obj) {
+		boolean igual = false;
+		
+		Articulo articulo = (Articulo) obj;
+		
+		if(this.nombre.equalsIgnoreCase(articulo.nombre)) {
+			igual = true;
+		}
+		
+		return igual;
+	}
 }
